@@ -1,0 +1,89 @@
+{
+  "name": "JobMatch",
+  "type": "object",
+  "properties": {
+    "resume_id": {
+      "type": "string",
+      "description": "Reference to Resume entity"
+    },
+    "job_id": {
+      "type": "string",
+      "description": "Reference to Job entity"
+    },
+    "overall_score": {
+      "type": "number",
+      "description": "Overall match score 0-100"
+    },
+    "skills_score": {
+      "type": "number",
+      "description": "Skills match score 0-100"
+    },
+    "experience_score": {
+      "type": "number",
+      "description": "Experience relevance score 0-100"
+    },
+    "embedding_similarity": {
+      "type": "number",
+      "description": "Cosine similarity from embeddings 0-1"
+    },
+    "matched_skills": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "missing_skills": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "experience_matches": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "job_requirement": {
+            "type": "string"
+          },
+          "resume_experience": {
+            "type": "string"
+          },
+          "relevance": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "keyword_matches": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "recommendation": {
+      "type": "string",
+      "description": "AI-generated recommendation"
+    },
+    "is_saved": {
+      "type": "boolean",
+      "default": false
+    },
+    "is_applied": {
+      "type": "boolean",
+      "default": false
+    },
+    "is_dismissed": {
+      "type": "boolean",
+      "default": false
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "resume_id",
+    "job_id",
+    "overall_score"
+  ]
+}

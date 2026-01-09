@@ -1,0 +1,61 @@
+{
+  "name": "SavedSearch",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "filters": {
+      "type": "object",
+      "properties": {
+        "keywords": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "work_type": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "job_type": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "seniority": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "salary_min": {
+          "type": "number"
+        },
+        "salary_max": {
+          "type": "number"
+        },
+        "companies": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "is_alert_enabled": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "name",
+    "filters"
+  ]
+}

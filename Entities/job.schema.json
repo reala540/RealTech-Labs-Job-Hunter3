@@ -1,0 +1,116 @@
+{
+  "name": "Job",
+  "type": "object",
+  "properties": {
+    "external_id": {
+      "type": "string",
+      "description": "ID from source platform"
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "linkedin",
+        "indeed",
+        "glassdoor",
+        "remote_ok",
+        "we_work_remotely",
+        "company_career",
+        "manual"
+      ],
+      "description": "Job source platform"
+    },
+    "title": {
+      "type": "string"
+    },
+    "company": {
+      "type": "string"
+    },
+    "company_logo": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "work_type": {
+      "type": "string",
+      "enum": [
+        "remote",
+        "hybrid",
+        "onsite"
+      ]
+    },
+    "job_type": {
+      "type": "string",
+      "enum": [
+        "full_time",
+        "part_time",
+        "contract",
+        "internship",
+        "temporary"
+      ]
+    },
+    "seniority": {
+      "type": "string",
+      "enum": [
+        "entry",
+        "mid",
+        "senior",
+        "lead",
+        "executive"
+      ]
+    },
+    "salary_min": {
+      "type": "number"
+    },
+    "salary_max": {
+      "type": "number"
+    },
+    "salary_currency": {
+      "type": "string",
+      "default": "USD"
+    },
+    "description": {
+      "type": "string"
+    },
+    "requirements": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "benefits": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "skills_required": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "posted_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "application_url": {
+      "type": "string"
+    },
+    "embeddings": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "title",
+    "company",
+    "source"
+  ]
+}
